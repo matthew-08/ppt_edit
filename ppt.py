@@ -44,7 +44,14 @@ for slide in prs.slides:
                     questionAndAnswer.append(default)
         if shape.name == "Answer Textbox":
             allSlides.append(questionAndAnswer)
+
+arrayOfQA = [{"question": "this is a question", "answer": "this is an answer"}for _ in range(26)]
+print(arrayOfQA)
+
+index = 0
 for q, a in allSlides:
-    print(q.text)
-    print(a.text)
+    print(arrayOfQA[0].items())
+    q.text = arrayOfQA[index]["question"]
+    a.text = arrayOfQA[index]["answer"]
+    index += 1
 prs.save('game-test.pptx')
